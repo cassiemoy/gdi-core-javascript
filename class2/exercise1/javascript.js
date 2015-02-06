@@ -12,8 +12,7 @@ function calculate(){
     }
 }
 
-
-function studentAverages(){
+function studentAverages() {
     var allAverages = [95, 90, 93, 52, 70, 88];
     var goodAverages = [];
     var badAverages = [];
@@ -29,6 +28,3 @@ function studentAverages(){
     
     alert(sentence);
 }
-
-
-
