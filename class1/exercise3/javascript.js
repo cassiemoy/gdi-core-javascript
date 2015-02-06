@@ -1,13 +1,17 @@
 function calculate(){
-    var age = 26;
-    var oldAge = 96;
-    var perDay = 2;
+    var age = 28; 
+    var maxAge = 100; 
+    var perDay = 3;
 
-    var days = (oldAge - age) * 356;
-    var total = perDay * days;
-    if(total > 40000){
-        alert("You will need " + total + " to last you until the ripe old age of " + oldAge + ". Wow! That's a lot!");
-    }else{
-        alert("You will need " + total + " to last you until the ripe old age of " + oldAge + ". You seem pretty reasonable");
+
+    var days = (maxAge-age)*365; 
+    var totalSnacks = perDay*days; 
+    var sentence = " You will need " + totalSnacks + " snacks to last you to the ripe old age of " + maxAge + "." + " Wow that's alot";
+    var sentenceTwo = " You will need " + totalSnacks + " snacks to last you to the ripe old age of " + maxAge + "." + " That seems reasonable" + "."; 
+     
+    if(totalSnacks > 40000){
+        alert(sentence); 
+    } else {
+        alert(sentenceTwo); 
     } 
 }
