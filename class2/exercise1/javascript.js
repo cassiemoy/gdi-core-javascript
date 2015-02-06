@@ -9,18 +9,26 @@ function calculate(){
         alert("You will need " + total + " to last you until the ripe old age of " + oldAge + ". Wow! That's a lot!");
     }else{
         alert("You will need " + total + " to last you until the ripe old age of " + oldAge + ". You seem pretty reasonable");
-    } 
+    }
 }
 
-function favoriteThings(){
-    var favoriteThings = ['Rabbits', 'Orange', 'Yogurt', 'Brussel Sprouts', 'Otters'];
-    var result = 'My favorite things are: ';
-    for (var i = 0; i<favoriteThings.length; i++){
-        if (i < favoriteThings.length - 1){
-            result += favoriteThings[i] + ', ';
-        }else{
-            result += "and " + favoriteThings[i] + '.';
+
+function studentAverages(){
+    var allAverages = [95, 90, 93, 52, 70, 88];
+    var goodAverages = [];
+    var badAverages = [];
+    for (var i = 0; i < allAverages.length; i++) {
+        if (allAverages[i] >= 80) {
+            goodAverages.push(allAverages[i]);
+        }
+        else {
+            badAverages.push(allAverages[i]);
         }
     }
-    alert(result);
+    var sentence = goodAverages.length + " students have averages above 80 and " + badAverages.length + " students have averages below 80.";
+    
+    alert(sentence);
 }
+
+
+
