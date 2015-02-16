@@ -10,27 +10,31 @@ function calculate(){
         resultDiv.innerHTML = "You will need " + total + " to last you until the ripe old age of " + oldAge + ". Wow! That's a lot!";
     }else{
         resultDiv.innerHTML = "You will need " + total + " to last you until the ripe old age of " + oldAge + ". You seem pretty reasonable";
-    } 
+    }
 }
 
-function favoriteThings(){
-    var favoriteThings = ['Rabbits', 'Orange', 'Yogurt', 'Brussel Sprouts', 'Otters'];
-    var resultDiv = document.getElementById('favorite-things');
-    
+function studentAverages(){
+    var studentAverages = [95, 90, 93, 52, 70, 88];
+    var goodAverages = [];
+    var badAverages = [];
+    var resultDiv = document.getElementById('student-averages');
+
     var resultParagraph = document.createElement('p');
-    var result = 'My favorite things are: ';
-    
-    for (var i = 0; i<favoriteThings.length; i++){
-        if (i < favoriteThings.length - 1){
-            result += favoriteThings[i] + ', ';
-        }else{
-            result += "and " + favoriteThings[i] + '.';
+
+    for (var i = 0; i < studentAverages.length; i++) {
+        if (studentAverages[i] >= 80) {
+          goodAverages.push(studentAverages[i]);
         }
-    }
+        else {
+          badAverages.push(studentAverages[i]);
+        }
+      }
+    var result = goodAverages.length + " students have averages greater than or equal to 80 and " + badAverages.length + " have averages below 80."
     var resultText = document.createTextNode(result);
     resultParagraph.appendChild(resultText);
     resultDiv.appendChild(resultParagraph);
 }
+
 function myFriends(){
     var friends = [
         {name: 'Santa Claus',
@@ -41,12 +45,12 @@ function myFriends(){
         hair: 'blue'}
     ];
     var resultDiv = document.createElement('div');
-    
+
     var introParagraph = document.createElement('p');
     var introText = document.createTextNode('My friends are:');
     introParagraph.appendChild(introText);
     resultDiv.appendChild(introParagraph)
-    
+
     for(var i = 0; i < friends.length; i++){
         var resultParagraph = document.createElement('p');
         var resultText = document.createTextNode(describeFriend(friends[i]));

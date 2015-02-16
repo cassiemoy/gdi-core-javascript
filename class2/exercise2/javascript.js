@@ -9,10 +9,11 @@ function calculate(){
         alert("You will need " + total + " to last you until the ripe old age of " + oldAge + ". Wow! That's a lot!");
     }else{
         alert("You will need " + total + " to last you until the ripe old age of " + oldAge + ". You seem pretty reasonable");
-    } 
+    }
 }
 
 function studentAverages() {
+<<<<<<< Updated upstream
     var allAverages = [95, 90, 93, 52, 70, 88];
     var goodAverages = [];
     var badAverages = [];
@@ -27,6 +28,20 @@ function studentAverages() {
     var sentence = goodAverages.length + " students have averages above 80 and " + badAverages.length + " students have averages below 80.";
     
     alert(sentence);
+=======
+  var studentAverages = [95, 90, 93, 52, 70, 88];
+  var goodAverages = [];
+  var badAverages = [];
+  for (var i = 0; i < studentAverages.length; i++) {
+    if (studentAverages[i] >= 80) {
+      goodAverages.push(studentAverages[i]);
+    }
+    else {
+      badAverages.push(studentAverages[i]);
+    }
+  }
+    alert(goodAverages.length + " students have averages greater than or equal to 80 and " + badAverages.length + " have averages below 80.");
+>>>>>>> Stashed changes
 }
 
 function myFriends(){

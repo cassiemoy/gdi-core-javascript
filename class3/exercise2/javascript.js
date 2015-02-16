@@ -14,7 +14,7 @@ $(document).ready(function(){
         }
     });
     $('#calculate').click(calculate);
-    $('#favorites').click(favoriteThings);
+    $('#averages').click(studentAverages);
     $('#friends').click(myFriends);
 })
 
@@ -30,26 +30,29 @@ function calculate(){
         resultDiv.html("You will need " + total + " to last you until the ripe old age of " + oldAge + ". Wow! That's a lot!");
     }else{
         resultDiv.html("You will need " + total + " to last you until the ripe old age of " + oldAge + ". You seem pretty reasonable");
-    } 
+    }
 }
 
-function favoriteThings(){
-    var favoriteThings = ['Rabbits', 'Orange', 'Yogurt', 'Brussel Sprouts', 'Otters'];
-    var resultDiv = $('#favorite-things');
-    
+function studentAverages(){
+    var studentAverages = [95, 90, 93, 52, 70, 88];
+    var goodAverages = [];
+    var badAverages = [];
+    var resultDiv = $('#student-averages');
     var resultParagraph = $('<p></p>');
-    var result = 'My favorite things are: ';
-    
-    for (var i = 0; i<favoriteThings.length; i++){
-        if (i < favoriteThings.length - 1){
-            result += favoriteThings[i] + ', ';
-        }else{
-            result += "and " + favoriteThings[i] + '.';
+    resultDiv.append(resultParagraph);
+
+    for (var i = 0; i < studentAverages.length; i++) {
+        if (studentAverages[i] >= 80) {
+          goodAverages.push(studentAverages[i]);
+        }
+        else {
+          badAverages.push(studentAverages[i]);
         }
     }
+    var result = goodAverages.length + " students have averages greater than or equal to 80 and " + badAverages.length + " have averages below 80."
     resultParagraph.append(result);
-    resultDiv.append(resultParagraph);
 }
+
 function myFriends(){
     var friends = [
         {name: 'Santa Claus',
@@ -60,10 +63,10 @@ function myFriends(){
         hair: 'blue'}
     ];
     var resultDiv = $('<div></div>')
-    
+
     var introParagraph = $('<p>My friends are:</p>');
     resultDiv.append(introParagraph)
-    
+
     for(var i = 0; i < friends.length; i++){
         var resultParagraph = $('<p>' + describeFriend(friends[i]) + '</p>');
         resultDiv.append(resultParagraph);
